@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+server:
+  port: 8989
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway, health, info
